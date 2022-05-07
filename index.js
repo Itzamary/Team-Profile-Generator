@@ -1,6 +1,8 @@
 // const { info } = require('console');
 // const fs = require('fs');
 
+const generateEmployees = require('./src/generate-employees.js');
+
 const inquirer = require('inquirer');
 
 let teamInfo = {
@@ -17,7 +19,7 @@ const askAgain = () => {
             type: 'confirm',
             name: 'addEmployees',
             message: 'Would you like to add other employees?',
-            default: true
+            default: false
         },
 
         {
@@ -33,10 +35,13 @@ const askAgain = () => {
     ])
     .then(info => {
         console.log(info);
-        if (info.addEmployees === 'false') {
-            return false;
-            
+        if (info.otherEmployees === 'none!'){
+
+            console.log(teamInfo);
+
+            return generateEmployees(teamInfo);
         }
+
         if (info.otherEmployees === 'engineer') {
             promptEngineer();
         } else if (info.otherEmployees === 'intern') {

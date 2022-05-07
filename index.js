@@ -1,7 +1,8 @@
 // const { info } = require('console');
-// const fs = require('fs');
+ const fs = require('fs');
 
 const generateEmployees = require('./src/generate-employees.js');
+const generateTemplate = require('./src/generate-template');
 
 const inquirer = require('inquirer');
 
@@ -34,12 +35,26 @@ const askAgain = () => {
         }
     ])
     .then(info => {
-        console.log(info);
+        console.log('INFO', info);
         if (info.otherEmployees === 'none!'){
 
-            console.log(teamInfo);
+            
 
-            return generateEmployees(teamInfo);
+            console.log('TMINF', teamInfo);
+            
+            let employees = generateEmployees(teamInfo);
+
+            console.log('emp', employees);
+
+          let template = generateTemplate(employees);
+
+            // this gives me the correct info
+            // console.log('makeFunciton', generateEmployees(teamInfo));
+
+            fs.writeFile('index.html', template, () => {
+
+            });
+
         }
 
         if (info.otherEmployees === 'engineer') {
@@ -51,9 +66,6 @@ const askAgain = () => {
 };
 
 const promptUser = () => {
-
-    
-
     return inquirer.prompt([
         {
             type: 'input',
@@ -171,16 +183,16 @@ const promptEngineer = () => {
         }
     ])
     .then((engInfo) => {
-        console.log('eng', engInfo);
+        // console.log('eng', engInfo);
 
         teamInfo.engineer.push(engInfo);
 
         askAgain();
         
-        console.log('team',teamInfo);
+        // console.log('team',teamInfo);
 
 
-        return teamInfo;
+        // return teamInfo;
     })
 };
 
@@ -245,10 +257,11 @@ const promptIntern = () => {
     .then((intInfo) => {
 
         teamInfo.intern.push(intInfo);
+        // console.log(teamInfo);
         askAgain();
 
         
-        return teamInfo;
+        // return teamInfo;
     })
 }
 
@@ -256,7 +269,7 @@ promptUser()
 .then(manInfo => {
     teamInfo.manager.push(manInfo);
     askAgain();
-    console.log(teamInfo.manager);
+    // console.log(teamInfo.manager);
 
-    return teamInfo;
+    // return teamInfo;
 })

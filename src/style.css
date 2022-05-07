@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.red {
+    background-color: red;
+    text-align: center;
+    height: 20%;
+}
+
+.border{
+    border: 1px solid red;
+    margin: 10px;
+    width: 20%;
+    height: 100%;
+    box-shadow: 10px 10px 5px #888;
+}
+
+.blue{
+    background-color: lightblue;
+    overflow-wrap: break-word;
+}
+
+.pborder{
+    border: 1px solid gray;
+    justify-content: center;
+    padding: 10px 5px;
+    overflow-wrap: break-word;
+}
+
+div {
+    padding: 20px 10px;
+    background-color: rgb(205, 205, 205);
+}
+
+p {
+    background-color: white;
+}

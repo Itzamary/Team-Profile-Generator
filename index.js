@@ -3,6 +3,9 @@ const fs = require('fs');
 
 const inquirer = require('inquirer');
 
+const teamInfo = [];
+
+
 const askAgain = () => {
     return inquirer.prompt([
         {
@@ -101,6 +104,7 @@ const promptUser = () => {
 
 
 const promptEngineer = () => {
+
     return inquirer.prompt([
         {
             type: 'input',
@@ -156,13 +160,22 @@ const promptEngineer = () => {
     ])
     .then((engInfo) => {
         console.log('eng', engInfo);
+
+        teamInfo.push(engInfo);
+
         askAgain();
+        console.log('teaminf', teamInfo);
+
+
+        return teamInfo;
     })
 };
 
 
 
 const promptIntern = () => {
+
+    
     return inquirer.prompt([
         {
             type: 'input',
@@ -218,12 +231,20 @@ const promptIntern = () => {
     ])
     .then((intInfo) => {
         console.log('intern',intInfo)
+
+        teamInfo.push(intInfo);
         askAgain();
+
+        console.log('intInf', teamInfo);
+        return teamInfo;
     })
 }
 
 promptUser()
 .then(manInfo => {
     console.log('manager', manInfo);
+    teamInfo.push(manInfo);
     askAgain();
+    console.log(teamInfo);
+    return teamInfo;
 })

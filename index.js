@@ -1,9 +1,14 @@
-const { info } = require('console');
-const fs = require('fs');
+// const { info } = require('console');
+// const fs = require('fs');
 
 const inquirer = require('inquirer');
 
-const teamInfo = [];
+let teamInfo = {
+    manager:[],
+    engineer:[],
+    intern: []
+
+};
 
 
 const askAgain = () => {
@@ -41,6 +46,9 @@ const askAgain = () => {
 };
 
 const promptUser = () => {
+
+    
+
     return inquirer.prompt([
         {
             type: 'input',
@@ -104,7 +112,6 @@ const promptUser = () => {
 
 
 const promptEngineer = () => {
-
     return inquirer.prompt([
         {
             type: 'input',
@@ -161,10 +168,11 @@ const promptEngineer = () => {
     .then((engInfo) => {
         console.log('eng', engInfo);
 
-        teamInfo.push(engInfo);
+        teamInfo.engineer.push(engInfo);
 
         askAgain();
-        console.log('teaminf', teamInfo);
+        
+        console.log('team',teamInfo);
 
 
         return teamInfo;
@@ -230,21 +238,20 @@ const promptIntern = () => {
         }
     ])
     .then((intInfo) => {
-        console.log('intern',intInfo)
 
-        teamInfo.push(intInfo);
+        teamInfo.intern.push(intInfo);
         askAgain();
 
-        console.log('intInf', teamInfo);
+        
         return teamInfo;
     })
 }
 
 promptUser()
 .then(manInfo => {
-    console.log('manager', manInfo);
-    teamInfo.push(manInfo);
+    teamInfo.manager.push(manInfo);
     askAgain();
-    console.log(teamInfo);
+    console.log(teamInfo.manager);
+
     return teamInfo;
 })

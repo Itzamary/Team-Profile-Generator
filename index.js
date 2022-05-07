@@ -205,10 +205,10 @@ const promptIntern = () => {
 
         {
             type: 'input',
-            name: 'intGhub',
-            message: 'What is the interns GitHub username? (Required)',
-            validate: intGh => {
-                if (intGh) {
+            name: 'intSchool',
+            message: 'What school the intern attend? (Required)',
+            validate: intSchool => {
+                if (intSchool) {
                     return true;
                 } else {
                     return false;

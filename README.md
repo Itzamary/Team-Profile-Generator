@@ -9,8 +9,11 @@ Node.js
 Express.js
 Jest
 
-## Website
+## GitHub Repository
 https://github.com/Itzamary/Team-Profile-Generator
+
+## Video Link
+https://drive.google.com/file/d/1-LjW1oVTnyqzKb5wd3L5mAK6vtMG-_nr/view
 
 ## Website Image
 ![](./images/teamProfileGenerator.png)

@@ -94,10 +94,11 @@ employeesHtmlTemplate = (totalEmployees) => {
 
     ${createManagerTemplate(totalEmployees.managers)}
 
+   ${createEngineerTemplate(totalEmployees.engineers)}
    
     ${createInternTemplate(totalEmployees.interns)}
     
-    ${createEngineerTemplate(totalEmployees.engineers)}
+    
 
 
     </main>

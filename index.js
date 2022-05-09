@@ -244,7 +244,7 @@ const promptIntern = () => {
         {
             type: 'input',
             name: 'intSchool',
-            message: 'What school the intern attend? (Required)',
+            message: 'What school did the intern attend? (Required)',
             validate: intSchool => {
                 if (intSchool) {
                     return true;

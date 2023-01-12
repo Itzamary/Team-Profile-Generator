@@ -1,13 +1,20 @@
 # Team Profile Generator
 
-## Purpose
-This project was for keeping up with the employes of a buisness. you are are prompted to asnwer questions in the terminal where node is installed and then once you are done it will generate a html webite with the answers you typed when prompted.
+## Description
+This program will interact with the client through the command line using the node.js . After the client has completed the command line questionnaire, the program will auto generate a team profile HTML page with team members and work related information. 
 
-## Built With
-Javascript
-Node.js
-Express.js
-Jest
+## How to Use
+1. ``Download`` the file from this repository and open in Vs-code.
+2. Open the terminal in the root directory of this file while in vs-code
+3. type ``npm install`` in the terminal and wait for all the installs to finish.
+4. type ``node index.js`` in the terminal to start the application and begin the questionnaire.
+## How to test
+
+## Technologies / Frameworks
+* JavaScript
+* Node.js
+* inquirer.js
+* Jest npm
 
 ## GitHub Repository
 https://github.com/Itzamary/Team-Profile-Generator
